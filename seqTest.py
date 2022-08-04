@@ -201,7 +201,7 @@ files.append("chunks14.csv")
 """
 
 #Read all the groups in the file
-groupsIds = readGroups('5DiffGroupsTrain.txt')
+groupsIds = readGroups('4_1GroupsTrain.txt')
 
 
 print('Start training')
@@ -271,7 +271,7 @@ terminal = False
 
 ### Run an episode
 
-groupsIds = readGroups('5DiffGroupsTest.txt')
+groupsIds = readGroups('4_1GroupsTest.txt')
 satO = {}
 maxMin = {}
 fScore = {}
