@@ -206,7 +206,7 @@ groupsIds = readGroups('4_1GroupsTrain.txt')
 
 print('Start training')
 environment = Environment.create(
-    environment=ThermostatEnvironment,
+    environment=SQUIRRELEnvironment,
     max_episode_timesteps=15)
 #agent = Agent.create(
 #    agent='tensorforce', environment=environment, update=2,
