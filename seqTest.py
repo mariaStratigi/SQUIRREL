@@ -62,7 +62,8 @@ def calcStats(sats):
             max = k
     maxMin = max - min
     sum = sum / len(sats)
-    fScore = 2*((sum*maxMin)/(sum + maxMin))
+    dis= 1 - maxMin
+    fScore = 2*((sum*dis)/(sum + dis))
     return (sum,maxMin,fScore)
 """
 #Read the already calculated single recommendations for all group members and all rounds of recommendations
