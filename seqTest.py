@@ -8,14 +8,6 @@ from sklearn.preprocessing import MinMaxScaler
 
 
 
-def getTopK(k, id, items, lfm):
-    itm = np.array(list(items))
-    res = lfm.predict(id,itm)
-    res = np.sort(res)[::-1]
-    top = []
-    for i in range(k):
-        top.append(res[i])
-    return top
 """
 #file: the name of the file containing the groups
 #path: change as needed: the full path of the folder containing the file of the groups
@@ -235,6 +227,8 @@ for gr in groupsIds:
     terminal = False
     internals = agent.initial_internals()
     i=0
+    #recommentedMovies: the list saves all the items that have been recommended to the group throughout the recommendation rounds. 
+    #By default items that have been recommended once to the group are not recommended again.
     recommentedMovies = []
     while not terminal:
         #groupRecs: the ratings of the group members without the items thar have been recommended
