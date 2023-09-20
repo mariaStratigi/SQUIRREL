@@ -149,12 +149,12 @@ def computeDFH(user,group):
         return 0
 
 
-
+#These are not needed and are not used. Used during initial experiments to track progression
 files = []
 
 
 #MovieLens
-
+"""
 files.append("ratingsStartingFull2003.csv")
 files.append("sem_2004_1.csv")
 files.append("sem_2004_2.csv")
@@ -171,7 +171,7 @@ files.append("sem_2009_2.csv")
 files.append("sem_2010_1.csv")
 files.append("sem_2010_2.csv")
 files.append("sem_2011_1.csv")
-
+"""
 
 #GoodReads - Amazon
 
@@ -219,6 +219,7 @@ for gr in groupsIds:
     grIn = gr.split("\t")
     print('Training Group ' + " (" + str(j) + ")\t" + grIn[0] )
     #groupInfo: the pre-calculated single recommendations for all group members and all rounds of recommendations
+    #change the static link to the folder where you have stored the files in folders -> 3_2, 4_1 and 5Dif
     groupInfo = getPredictions("C:/Users/jarim/Documents/work/ephemeral/rnn/groupPredictions/allGroups/"+grIn[0].strip())
 
     #group: a list of all group member
