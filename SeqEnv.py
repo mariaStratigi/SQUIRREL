@@ -6,21 +6,9 @@ import numpy as np
 ###-----------------------------------------------------------------------------
 ### Environment definition
 class SQUIRRELEnvironment(Environment):
-    """This class defines a simple thermostat environment.  It is a room with
-    a heater, and when the heater is on, the room temperature will approach
-    the max heater temperature (usually 1.0), and when off, the room will
-    decay to a temperature of 0.0.  The exponential constant that determines
-    how fast it approaches these temperatures over timesteps is tau.
-    """
-    def __init__(self):
-        ## Some initializations.  Will eventually parameterize this in the constructor.
-        #self.tau = 3.0
-        #self.current_temp = np.random.random(size=(1,))
-        #self.en = []
-        #i = 0
-        #for i in range(15):
-        #    self.en[i] = 0.0
 
+    def __init__(self):
+        
         self.en = []
         self.en.append(0.0)
         self.en.append(0.0)
@@ -44,9 +32,6 @@ class SQUIRRELEnvironment(Environment):
 
 
     def actions(self):
-        """Action 0 means no heater, temperature approaches 0.0.  Action 1 means
-        the heater is on and the room temperature approaches 1.0.
-        """
         return dict(type='int', num_values=6)
 
 
@@ -467,9 +452,7 @@ class SQUIRRELEnvironment(Environment):
         ## Compute the reward
         reward = self.computeReward(satS)
 
-        ## The only way to go terminal is to exceed max_episode_timestamp.
-        ## terminal == False means episode is not done
-        ## terminal == True means it is done.
+        
         if self.timestep == 15:
             terminal = True
         else:
